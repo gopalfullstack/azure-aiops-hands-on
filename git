@@ -1,0 +1,6 @@
+git init
+git add .
+git commit -m "Initial Azure AIOps hands-on project"
+git branch -M main
+git remote add origin https://github.com/gopalfullstack/azure-aiops-hands-on.git
+git push -u origin main

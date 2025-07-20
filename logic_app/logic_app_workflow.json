@@ -1,0 +1,31 @@
+
+{
+  "definition": {
+    "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+    "actions": {
+      "Restart_VM": {
+        "type": "Http",
+        "inputs": {
+          "method": "POST",
+          "uri": "<AZURE_FUNCTION_URL>",
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "vmName": "aiops-vm",
+            "resourceGroup": "aiops-resource-group"
+          }
+        }
+      }
+    },
+    "triggers": {
+      "manual": {
+        "type": "Request",
+        "kind": "Http",
+        "inputs": {
+          "schema": {}
+        }
+      }
+    }
+  }
+}
